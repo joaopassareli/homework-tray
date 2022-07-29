@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\SalesController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VendorsController;
+use App\Http\Controllers\SalesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,4 @@ Route::get('/', function () {
 Route::resource('/vendors', VendorsController::class)
     ->except(['show']);
 
-Route::get('/sale', [SalesController::class, 'index'])->name('sales.index');
+Route::get('/sales', [SalesController::class, 'index'])->name('sales.index');
