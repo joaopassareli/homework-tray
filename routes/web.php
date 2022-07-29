@@ -17,7 +17,7 @@ use App\Http\Controllers\SalesController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('vendors.index');
 });
 
 Route::resource('/vendors', VendorsController::class)

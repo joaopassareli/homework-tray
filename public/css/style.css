@@ -1,3 +1,37 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: radial-gradient(circle, #fefefe, whitesmoke);
+}
+
+/* CSS do Cabeçalho */
+/* header {
+    background: linear-gradient(to top, #f8f9fa, #fefefe);
+    text-align: center;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+} */
+/* Fim CSS do Cabeçalho */
+
+
+/* CSS do Body */
+main {
+    margin-top: 2em;
+}
+
+.tittle {
+    text-align: center;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+}
+
+/* Fim CSS do Body */
+
+
+/* CSS do Rodapé */
+footer {
+    background:linear-gradient(to top,rgb(197, 225, 235), rgb(213, 223, 226));
+    margin-top: 2em;
+}
 .rodape {
-    color: darkred;
+    text-align: center;
 }
