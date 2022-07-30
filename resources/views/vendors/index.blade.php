@@ -12,11 +12,16 @@
                 </div>
 
                 <div class="botoes d-flex">
-                    <a href="{{ route('vendors.edit', $vendor->id) }}" class="btn btn-info btn-sm">
+
+                    <a href="{{ route('sales-report.show', $vendor->id) }}" class="btn btn-success btn-sm" title="Relatório de Vendas">
+                        <i class="bi bi-file-earmark-bar-graph"></i>
+                    </a>
+
+                    <a href="{{ route('vendors.edit', $vendor->id) }}" class="btn btn-info btn-sm ms-1" title="Editar Vendedor">
                         <i class="bi bi-pencil-square"></i>
                     </a>
 
-                    <form action="{{ route('vendors.destroy', $vendor->id) }}" method="post">
+                    <form action="{{ route('vendors.destroy', $vendor->id) }}" method="post" title="Excluir Vendedor">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger btn-sm ms-1">
