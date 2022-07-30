@@ -4,17 +4,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VendorsController;
 use App\Http\Controllers\SalesController;
+use App\Http\Controllers\SalesReportController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('vendors.index');
@@ -23,4 +14,7 @@ Route::get('/', function () {
 Route::resource('/vendors', VendorsController::class)
     ->except(['show']);
 
-Route::get('/sales', [SalesController::class, 'index'])->name('sales.index');
+Route::resource('/sales', SalesController::class)
+    ->except(['show']);
+
+Route::get('/sales-report', [SalesReportController::class, 'index'])->name('sales-report');

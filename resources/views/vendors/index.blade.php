@@ -1,14 +1,14 @@
 <x-layout title="Vendedores" :mensagem-sucesso="$mensagemSucesso">
 
+    <a href="{{ route('vendors.create') }}" class="btn btn-dark mb-2">Adicionar</a>
+
     <ul class="list-group">
 
         @foreach($vendors as $vendor)
             <li class="list-group-item d-flex justify-content-between align-items-center">
 
                 <div class="d-flex alignt-items-center">
-                    <a href="#" class="align-middle">
-                        {{ $vendor->name }}
-                    </a>
+                    {{ $vendor->name }}
                 </div>
 
                 <div class="botoes d-flex">

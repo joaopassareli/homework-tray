@@ -29,10 +29,10 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                           <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Vendedores</a>
+                            <a class="nav-link active" aria-current="page" href="{{ route('vendors.index') }}">Vendedores</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Vendas</a>
+                            <a class="nav-link active" aria-current="page" href="{{ route('sales.index') }}">Vendas</a>
                           </li>
                         </ul>
                     </div>

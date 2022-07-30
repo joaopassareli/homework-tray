@@ -20,7 +20,7 @@ class VendorsController extends Controller
 
     public function create ()
     {
-        return view('\vendors.create');
+        return view('vendors.create');
     }
 
     public function store (VendorsFormRequest $request, CreateVendor $createVendor)

@@ -14,7 +14,7 @@ class Vendor extends Model
 
     public function sales()
     {
-        return $this->hasMany(Sale::class, 'vendors_id');
+        return $this->hasMany(Sale::class, 'vendor_id');
     }
 
     protected static function booted()

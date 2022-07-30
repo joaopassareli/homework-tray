@@ -13,7 +13,7 @@ class SalesFormRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,18 @@ class SalesFormRequest extends FormRequest
     public function rules()
     {
         return [
+            'vendor_id' => ['required'],
+            'sale_value' => ['required', 'min:0'],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'vendor_id' => 'É obrigatório definir um vendedor.',
             //
+            'sale.required' => 'É obrigatório definir um valor para a venda',
+            'sale.min' => 'O valor da venda deve ser maior que 0',
         ];
     }
 }
