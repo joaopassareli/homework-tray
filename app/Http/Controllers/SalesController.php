@@ -6,6 +6,7 @@ use App\Models\Sale;
 use App\Models\Vendor;
 use App\Services\CreateSale;
 use Illuminate\Http\Request;
+use App\Services\CalculateTotalSales;
 use App\Http\Requests\SalesFormRequest;
 
 class SalesController extends Controller
@@ -17,9 +18,12 @@ class SalesController extends Controller
 
         $mensagemSucesso = session('mensagem.sucesso');
 
+        $totalSalesValue = CalculateTotalSales::calculateTotalSales($sales);
+
         return view('sales.index')
             ->with('sales', $sales)
             ->with('vendors', $vendors)
+            ->with('totalSalesValue', $totalSalesValue)
             ->with('mensagemSucesso', $mensagemSucesso);
     }
 

@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-use App\Models\Sale;
 use Illuminate\Database\Eloquent\Collection;
 
 class CalculateComission
