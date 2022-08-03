@@ -18,7 +18,6 @@ class DailySalesReport extends Mailable
      */
     public function __construct()
     {
-        //
     }
 
     /**
