@@ -1,6 +1,7 @@
-<x-layout title="Vendas Registradas" :mensagem-sucesso="$mensagemSucesso">
+<x-layout title="Vendas Registradas em {{ date('d/m/Y') }}" :mensagem-sucesso="$mensagemSucesso">
 
     <a href="{{ route('sales.create') }}" class="btn btn-dark mb-2">Gerar Venda</a>
+    <a href="{{ route('mail.index') }}" class="btn btn-dark mb-2">Relatório de Vendas</a>
 
     <table class="table table-striped table-hover">
         <thead align="center">

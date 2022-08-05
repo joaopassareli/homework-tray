@@ -6,6 +6,7 @@ use App\Models\Sale;
 use App\Models\Vendor;
 use App\Services\CreateSale;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Services\CalculateTotalSales;
 use App\Http\Requests\SalesFormRequest;
 
@@ -13,7 +14,7 @@ class SalesController extends Controller
 {
     public function index ()
     {
-        $sales = Sale::all();
+        $sales = DB::table('sales')->whereDate('created_at', date('Y-m-d'))->get();
         $vendors = Vendor::all();
 
         $mensagemSucesso = session('mensagem.sucesso');
