@@ -32,6 +32,13 @@ footer {
     background:linear-gradient(to top,rgb(197, 225, 235), rgb(213, 223, 226));
     margin-top: 2em;
 }
+
 .rodape {
     text-align: center;
+}
+
+.btn {
+    box-sizing: border-box;
+    box-shadow: 10px 10px 20px gray;
+    transition: 0.5s all;
 }
