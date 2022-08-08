@@ -1,9 +1,8 @@
 <?php
 
-
+use App\Mail\SendSalesReport;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PdfController;
-use App\Http\Controllers\MailController;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\VendorsController;
 use App\Http\Controllers\SalesReportController;
@@ -21,3 +20,8 @@ Route::resource('/sales', SalesController::class)
 
 Route::resource('/sales-report', SalesReportController::class)
     ->only(['show']);
+
+Route::get('send-report', function(){
+    // return new SendSalesReport();
+    Mail::send(new SendSalesReport());
+});

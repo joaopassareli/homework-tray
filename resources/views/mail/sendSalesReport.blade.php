@@ -1,10 +1,14 @@
-<x-layout title="Vendas Registradas em {{ date('d/m/Y') }}" :mensagem-sucesso="$mensagemSucesso">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Relatório de Vendas</title>
+</head>
+<body>
 
-    <section class="buttons d-flex flex-row-reverse mb-4">
-        <a href="{{ route('sales.create') }}" class="btn btn-success ms-3">Gerar Venda</a>
-        <a href="#" class="btn btn-dark">Relatório de Vendas</a>
-    </section>
-
+    <h1 class="d-flex justify-content-center">Relatório de Vendas - {{ date('d/m/Y')  }}</h1>
 
     <table class="table table-striped table-hover">
         <thead align="center">
@@ -31,5 +35,7 @@
             </th>
         </tfoot>
     </table>
+</body>
+</html>
 
-</x-layout>
+
