@@ -10,7 +10,7 @@ use App\Services\CalculateTotalSales;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class SendSalesReport extends Mailable
+class SendSalesReport extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
