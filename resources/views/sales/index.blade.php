@@ -2,7 +2,6 @@
 
     <section class="buttons d-flex flex-row-reverse mb-4">
         <a href="{{ route('sales.create') }}" class="btn btn-success ms-3">Gerar Venda</a>
-        <a href="#" class="btn btn-dark">Relatório de Vendas</a>
     </section>
 
 
