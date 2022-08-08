@@ -36,13 +36,17 @@
             @endforeach
         </tbody>
         <tfoot align="center">
-            {{-- <th colspan="2" style="font-weight: bold">Total de Comissão</th> --}}
-            <th colspan="2" style="font-weight: bold">
-                Total das Vendas R$ <?= number_format($totalSalesValue, 2, ',', '.'); ?>
-            </th>
-            <th colspan="3" style="font-weight: bold" id="totalComission">
-                Total de Comissão R$ <?= number_format($totalComission, 2, ',', '.'); ?>
-            </th>
+            <tr>
+                <th colspan="5" style="font-weight: bold" id="totalComission">
+                    Total de Comissão R$ <?= number_format($totalComission, 2, ',', '.'); ?>
+                </th>
+            </tr>
+            <tr>
+                <th colspan="5" style="font-weight: bold">
+                    Total das Vendas R$ <?= number_format($totalSalesValue, 2, ',', '.'); ?>
+                </th>
+            </tr>
+
         </tfoot>
     </table>
 
