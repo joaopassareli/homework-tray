@@ -25,5 +25,6 @@ Route::resource('/sales-report', SalesReportController::class)
 
 Route::get('send-report', function(){
     Mail::send(new SendSalesReport());
-    return to_route('sales.index');
+    return to_route('sales.index')
+        ->with('mensagem.sucesso', "Relatório de vendas enviado com sucesso!");;
 })->name('send-report');
