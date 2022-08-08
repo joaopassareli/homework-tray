@@ -47,4 +47,20 @@ class SalesController extends Controller
         return to_route('sales.index')
             ->with('mensagem.sucesso', "Registrada a venda no valor de R$ {$sale->sale_value} efetuada pelo vendedor {$vendor->name}");
     }
+
+    public function all ()
+    {
+        $sales = Sale::all();
+        $vendors = Vendor::all();
+
+        $mensagemSucesso = session('mensagem.sucesso');
+
+        $totalSalesValue = CalculateTotalSales::calculateTotalSales($sales);
+
+        return view('sales.all')
+            ->with('sales', $sales)
+            ->with('vendors', $vendors)
+            ->with('totalSalesValue', $totalSalesValue)
+            ->with('mensagemSucesso', $mensagemSucesso);
+    }
 }

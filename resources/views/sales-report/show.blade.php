@@ -47,15 +47,6 @@
     </table>
 
     <a href="{{ url()->previous() }}" class="btn btn-primary btn-lg ms-3">Voltar</a>
-{{--
-    <script src="{{ asset('js/jquery.js') }}"></script>
-
-    <script>
-        totalComission = {{ $totalComission }};
-        formatedtotalComission = totalComission.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'});
-        totalComissionText = $('#totalComission');
-        totalComissionText.text(formatedtotalComission);
-    </script> --}}
 
 </x-layout>
 

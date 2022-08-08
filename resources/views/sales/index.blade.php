@@ -1,10 +1,13 @@
 <x-layout title="Vendas Registradas em {{ date('d/m/Y') }}" :mensagem-sucesso="$mensagemSucesso">
 
     <section class="buttons d-flex flex-row-reverse mb-4">
-        <a href="{{ route('sales.create') }}" class="btn btn-success ms-3">Gerar Venda</a>
-        <a href="{{ route('send-report') }}" class="btn btn-dark">Relatório de Vendas</a>
+        <a href="{{ route('sales.create') }}" class="btn btn-success ms-3">
+            Gerar Venda  <i class="bi bi-plus-square"></i>
+        </a>
+        <a href="{{ route('send-report') }}" class="btn btn-dark">
+            Relatório de Vendas  <i class="bi bi-envelope-exclamation-fill"></i>
+        </a>
     </section>
-
 
     <table class="table table-striped table-hover">
         <thead align="center">
@@ -31,5 +34,11 @@
             </th>
         </tfoot>
     </table>
+
+    <div class="d-flex justify-content-center">
+        <a href="{{ route('all') }}" class="btn btn-dark">
+            Veja Todas as Vendas  <i class="bi bi-receipt-cutoff"></i>
+        </a>
+    </div>
 
 </x-layout>

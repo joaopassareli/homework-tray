@@ -18,6 +18,8 @@ Route::resource('/vendors', VendorsController::class)
 Route::resource('/sales', SalesController::class)
     ->except(['show']);
 
+Route::get('sales/all', [SalesController::class, 'all'])->name('all');
+
 Route::resource('/sales-report', SalesReportController::class)
     ->only(['show']);
 

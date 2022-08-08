@@ -1,6 +1,8 @@
 <x-layout title="Vendedores" :mensagem-sucesso="$mensagemSucesso">
 
-    <a href="{{ route('vendors.create') }}" class="btn btn-dark mb-2">Adicionar</a>
+    <a href="{{ route('vendors.create') }}" class="btn btn-dark mb-2">
+        Adicionar <i class="bi bi-plus-square"></i>
+    </a>
 
     <ul class="list-group">
 
