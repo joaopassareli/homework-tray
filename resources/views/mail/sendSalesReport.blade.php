@@ -7,7 +7,6 @@
     <title>Relatório de Vendas</title>
 </head>
 <body>
-
     <h1 class="d-flex justify-content-center">Relatório de Vendas - {{ date('d/m/Y')  }}</h1>
 
     <table class="table table-striped table-hover">
@@ -37,5 +36,3 @@
     </table>
 </body>
 </html>
-
-

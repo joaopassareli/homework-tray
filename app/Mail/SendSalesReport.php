@@ -28,8 +28,6 @@ class SendSalesReport extends Mailable implements ShouldQueue
         $this->sales = DB::table('sales')->whereDate('created_at', date('Y-m-d'))->get();
     }
 
-    // Enviar o Vendor::all() e dentro do build tentar fazer um foreach para enviar todos os e-mails;
-
     /**
      * Build the message.
      *
