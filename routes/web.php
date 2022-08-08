@@ -22,6 +22,6 @@ Route::resource('/sales-report', SalesReportController::class)
     ->only(['show']);
 
 Route::get('send-report', function(){
-        Mail::send(new SendSalesReport());
-        return to_route('sales.index');
-    })->name('send-report');
+    Mail::send(new SendSalesReport());
+    return to_route('sales.index');
+})->name('send-report');

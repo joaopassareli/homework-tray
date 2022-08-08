@@ -22,7 +22,7 @@
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="{{ route('vendors.index')}}">
+                    <a class="navbar-brand" href="{{ route('sales.index')}}">
                         Home
                     </a>
 
