@@ -9,7 +9,7 @@ use App\Http\Controllers\SalesReportController;
 
 
 Route::get('/', function () {
-    return view('sales.index');
+    return to_route('all');
 });
 
 Route::resource('/vendors', VendorsController::class)

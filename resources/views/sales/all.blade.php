@@ -1,4 +1,4 @@
-<x-layout title="Vendas Registradas" :mensagem-sucesso="$mensagemSucesso">
+<x-layout title="Vendas Registradas">
 
     <table class="table table-striped table-hover">
         <thead align="center">

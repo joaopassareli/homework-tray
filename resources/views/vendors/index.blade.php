@@ -23,7 +23,7 @@
                         <i class="bi bi-pencil-square"></i>
                     </a>
 
-                    <form action="{{ route('vendors.destroy', $vendor->id) }}" method="post" title="Excluir Vendedor">
+                    <form action="{{ route('vendors.destroy', $vendor->id) }}" method="post" title="Excluir Vendedor" onsubmit="confirm('Ao remover o vendedor {{ $vendor->name }}, todas suas vendas também serão excluídas! Deseja continuar?')">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger btn-sm ms-1">
