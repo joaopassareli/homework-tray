@@ -3,7 +3,8 @@
 
 <ul>
     <li>Clonar o repositório no computador, em uma pasta desejada.</li>
-    <li>Fazer uma cópia do arquivo .env.example e renomear para .env</li>
+    <li>Criar na pasta database o arquivo 'database.sqlite', para conseguir utilizar o banco de dados.</li>
+    <li>Fazer uma cópia do arquivo .env.example e renomear para '.env'</li>
     <li>Rodar o comando: composer install</li>
     <li>Rodar o comando: php artisan migrate</li>
 </ul>
