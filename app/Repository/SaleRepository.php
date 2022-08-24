@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-class SaleRepository
+interface SaleRepository
 {
 
 }

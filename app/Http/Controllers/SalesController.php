@@ -43,6 +43,7 @@ class SalesController extends Controller
         );
 
         $vendor = Vendor::find($sale->vendor_id);
+        $sale->sale_value = number_format($sale->sale_value, 2, ',', '.');
 
         return to_route('sales.index')
             ->with('mensagem.sucesso', "Registrada a venda no valor de R$ {$sale->sale_value} efetuada pelo vendedor {$vendor->name}");
