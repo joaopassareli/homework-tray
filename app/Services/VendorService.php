@@ -27,4 +27,9 @@ class VendorService
     {
         return $this->vendorRepository->update($vendor, $request);
     }
+
+    public function destroyVendor (Vendor $vendor)
+    {
+        return $this->vendorRepository->destroy($vendor);
+    }
 }

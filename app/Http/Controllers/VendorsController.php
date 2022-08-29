@@ -49,9 +49,7 @@ class VendorsController extends Controller
 
     public function destroy (Vendor $vendor)
     {
-        $vendor->delete();
-
         return to_route('vendors.index')
-            ->with('mensagem.sucesso', "Vendedor '{$vendor->name}' excluído com sucesso!");
+            ->with('mensagem.sucesso', $this->vendorService->destroyVendor($vendor));
     }
 }

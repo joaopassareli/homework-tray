@@ -36,4 +36,11 @@ class VendorRepository
 
         return $mensagemSucesso = "O vendedor '{$oldName}' teve seu nome alterado para '{$vendor->name}' e seu e-mail de '{$oldEmail}' para '{$vendor->email}'";
     }
+
+    public function destroy(Vendor $vendor)
+    {
+        $vendor->delete();
+
+        return $mensagemSucesso = "Vendedor {$vendor->name} excluído com sucesso!";
+    }
 }
