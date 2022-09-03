@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Sale;
 use App\Models\Vendor;
-use App\Services\CreateSale;
 use Illuminate\Http\Request;
 use App\Services\SaleService;
 use Illuminate\Support\Facades\DB;
@@ -37,17 +36,10 @@ class SalesController extends Controller
             ->with('vendors', $this->vendorRepository->getAllVendors());
     }
 
-    public function store (SalesFormRequest $request, CreateSale $createSale)
+    public function store (SalesFormRequest $request)
     {
-        $sale = $createSale->add(
-            $request->sale_value, $request->vendor_id
-        );
-
-        $vendor = Vendor::find($sale->vendor_id);
-        $sale->sale_value = number_format($sale->sale_value, 2, ',', '.');
-
         return to_route('sales.index')
-            ->with('mensagem.sucesso', "Registrada a venda no valor de R$ {$sale->sale_value} efetuada pelo vendedor {$vendor->name}");
+            ->with('mensagem.sucesso', $this->saleService->createSale($request->sale_value, $request->vendor_id));
     }
 
     public function all ()

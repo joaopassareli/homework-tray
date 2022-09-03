@@ -18,9 +18,9 @@ class SaleService
         return $this->saleRepository->getSalesFromTheDay();
     }
 
-    public function createSale (Vendor $vendors, string $name, string $email)
+    public function createSale (float $sale_value, int $vendor_id)
     {
-        return $this->saleRepository->add($name, $email);
+        return $this->saleRepository->add($sale_value, $vendor_id);
     }
 
     public static function calculateTotalSales (Collection $sales): float
