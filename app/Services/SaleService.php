@@ -38,4 +38,16 @@ class SaleService
     {
         return $this->saleRepository->getAllSales();
     }
+
+    public static function calculateComission(Collection $sales): float
+    {
+        static $comission = 8.5;
+        $totalComission = 0;
+
+        foreach($sales as $sale){
+            $totalComission += $sale->sale_value * ($comission / 100);
+        }
+
+        return $totalComission;
+    }
 }

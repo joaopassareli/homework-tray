@@ -3,10 +3,10 @@
 namespace App\Mail;
 
 use App\Models\Vendor;
+use App\Services\SaleService;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Support\Facades\DB;
-use App\Services\CalculateTotalSales;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
@@ -41,7 +41,7 @@ class SendSalesReport extends Mailable implements ShouldQueue
             $this->to($vendor->email, $vendor->name);
         }
 
-        $totalSalesValue = CalculateTotalSales::calculateTotalSales($this->sales);
+        $totalSalesValue = SaleService::calculateTotalSales($this->sales);
 
         return $this->view('mail.sendSalesReport', [
             'vendors' => $this->vendors,
