@@ -8,13 +8,15 @@ use App\Services\CreateSale;
 use Illuminate\Http\Request;
 use App\Services\SaleService;
 use Illuminate\Support\Facades\DB;
+use App\Repository\VendorRepository;
 use App\Http\Requests\SalesFormRequest;
 
 class SalesController extends Controller
 {
-    public function __construct(protected SaleService $saleService)
-    {
-    }
+    public function __construct(
+        protected SaleService $saleService,
+        protected VendorRepository $vendorRepository
+    ){}
 
     public function index ()
     {
@@ -31,10 +33,8 @@ class SalesController extends Controller
 
     public function create ()
     {
-        // $vendors = Vendor::all();
-
-        return view('sales.create');
-            // ->with('vendors', $vendors);
+        return view('sales.create')
+            ->with('vendors', $this->vendorRepository->getAllVendors());
     }
 
     public function store (SalesFormRequest $request, CreateSale $createSale)

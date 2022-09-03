@@ -2,9 +2,10 @@
 
 namespace App\Services;
 
+use App\Models\Vendor;
 use App\Repository\SaleRepository;
-use App\Http\Requests\SalesFormRequest;
 use Illuminate\Support\Collection;
+use App\Http\Requests\SalesFormRequest;
 
 class SaleService
 {
@@ -17,10 +18,10 @@ class SaleService
         return $this->saleRepository->getSalesFromTheDay();
     }
 
-    // public function createSale (string $name, string $email)
-    // {
-    //     return $this->saleRepository->add($name, $email);
-    // }
+    public function createSale (Vendor $vendors, string $name, string $email)
+    {
+        return $this->saleRepository->add($name, $email);
+    }
 
     public static function calculateTotalSales (Collection $sales): float
     {
