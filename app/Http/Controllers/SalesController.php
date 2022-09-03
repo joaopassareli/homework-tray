@@ -6,34 +6,35 @@ use App\Models\Sale;
 use App\Models\Vendor;
 use App\Services\CreateSale;
 use Illuminate\Http\Request;
+use App\Services\SaleService;
 use Illuminate\Support\Facades\DB;
-use App\Services\CalculateTotalSales;
 use App\Http\Requests\SalesFormRequest;
 
 class SalesController extends Controller
 {
+    public function __construct(protected SaleService $saleService)
+    {
+    }
+
     public function index ()
     {
-        $sales = DB::table('sales')->whereDate('created_at', date('Y-m-d'))->get();
-        $vendors = Vendor::all();
-
         $mensagemSucesso = session('mensagem.sucesso');
 
-        $totalSalesValue = CalculateTotalSales::calculateTotalSales($sales);
+        $data = $this->saleService->index();
 
         return view('sales.index')
-            ->with('sales', $sales)
-            ->with('vendors', $vendors)
-            ->with('totalSalesValue', $totalSalesValue)
-            ->with('mensagemSucesso', $mensagemSucesso);
+            ->with('mensagemSucesso', $mensagemSucesso)
+            ->with('sales', $data['sales'])
+            ->with('vendors', $data['vendors'])
+            ->with('totalSalesValue', $data['totalSalesValue']);
     }
 
     public function create ()
     {
-        $vendors = Vendor::all();
+        // $vendors = Vendor::all();
 
-        return view('sales.create')
-            ->with('vendors', $vendors);
+        return view('sales.create');
+            // ->with('vendors', $vendors);
     }
 
     public function store (SalesFormRequest $request, CreateSale $createSale)

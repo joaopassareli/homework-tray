@@ -53,10 +53,3 @@
     <a href="{{ url()->previous() }}" class="btn btn-primary btn-lg ms-3">Voltar</a>
 
 </x-layout>
-
-
-
-
-
-
-
