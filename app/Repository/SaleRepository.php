@@ -42,4 +42,20 @@ class SaleRepository
             return $mensagemSucesso;
         });
     }
+
+    public function getAllSales()
+    {
+        $sales = Sale::all();
+        $vendors = Vendor::all();
+
+        $totalSalesValue = SaleService::calculateTotalSales($sales);
+
+        $data = array(
+            'sales' => $sales,
+            'vendors' => $vendors,
+            'totalSalesValue' => $totalSalesValue
+        );
+
+        return $data;
+    }
 }

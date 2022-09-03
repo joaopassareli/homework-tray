@@ -44,17 +44,13 @@ class SalesController extends Controller
 
     public function all ()
     {
-        $sales = Sale::all();
-        $vendors = Vendor::all();
-
+        $data = $this->saleService->showAllSales();
         $mensagemSucesso = session('mensagem.sucesso');
 
-        $totalSalesValue = CalculateTotalSales::calculateTotalSales($sales);
-
         return view('sales.all')
-            ->with('sales', $sales)
-            ->with('vendors', $vendors)
-            ->with('totalSalesValue', $totalSalesValue)
+            ->with('sales', $data['sales'])
+            ->with('vendors', $data['vendors'])
+            ->with('totalSalesValue', $data['totalSalesValue'])
             ->with('mensagemSucesso', $mensagemSucesso);
     }
 }

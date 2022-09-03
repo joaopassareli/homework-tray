@@ -34,8 +34,8 @@ class SaleService
         return $totalSalesValue;
     }
 
-    // public function calculateComission ()
-    // {
-
-    // }
+    public function showAllSales ()
+    {
+        return $this->saleRepository->getAllSales();
+    }
 }
