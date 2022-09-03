@@ -12,11 +12,17 @@
             <directory suffix="Test.php">./tests/Feature</directory>
         </testsuite>
     </testsuites>
+
+    <logging>
+        <log type="testdox-text" target="executed-tests.txt"/>
+    </logging>
+
     <coverage processUncoveredFiles="true">
         <include>
             <directory suffix=".php">./app</directory>
         </include>
     </coverage>
+
     <php>
         <env name="APP_ENV" value="testing"/>
         <env name="BCRYPT_ROUNDS" value="4"/>
@@ -28,4 +34,5 @@
         <env name="SESSION_DRIVER" value="array"/>
         <env name="TELESCOPE_ENABLED" value="false"/>
     </php>
+
 </phpunit>

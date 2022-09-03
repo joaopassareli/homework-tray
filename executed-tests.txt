@@ -1,0 +1,9 @@
+Example (Tests\Unit\Example)
+ [x] That true is true
+
+Sale Controller (Tests\Feature\SaleController)
+ [x] The application returns a successful response
+
+Vendor Controller (Tests\Feature\VendorController)
+ [x] Confirm that vendor is created
+
