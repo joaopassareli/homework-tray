@@ -3,15 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vendor;
-use Illuminate\Http\Request;
 use App\Services\VendorService;
 use App\Http\Requests\VendorsFormRequest;
 
 class VendorsController extends Controller
 {
-    public function __construct(protected VendorService $vendorService)
-    {
-    }
+    public function __construct(
+        protected VendorService $vendorService
+    ) {}
 
     public function index ()
     {
@@ -44,12 +43,18 @@ class VendorsController extends Controller
     public function update (Vendor $vendor, VendorsFormRequest $request)
     {
         return to_route('vendors.index')
-            ->with('mensagem.sucesso', $this->vendorService->updateVendorData($vendor, $request));
+            ->with(
+                'mensagem.sucesso',
+                $this->vendorService->updateVendorData($vendor, $request)
+            );
     }
 
     public function destroy (Vendor $vendor)
     {
         return to_route('vendors.index')
-            ->with('mensagem.sucesso', $this->vendorService->destroyVendor($vendor));
+            ->with(
+                'mensagem.sucesso',
+                $this->vendorService->destroyVendor($vendor)
+            );
     }
 }

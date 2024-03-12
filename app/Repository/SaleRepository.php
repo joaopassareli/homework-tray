@@ -5,12 +5,11 @@ namespace App\Repository;
 use App\Models\Sale;
 use App\Models\Vendor;
 use App\Services\SaleService;
-use DomainException;
 use Illuminate\Support\Facades\DB;
 
 class SaleRepository
 {
-    public function getSalesFromTheDay ()
+    public function getSalesFromTheDay(): array
     {
         $sales = DB::table('sales')->whereDate('created_at', date('Y-m-d'))->get();
         $vendors = Vendor::all();
@@ -24,7 +23,7 @@ class SaleRepository
         );
     }
 
-    public function add (float $sale_value, int $vendor_id)
+    public function add(float $sale_value, int $vendor_id)
     {
         return DB::transaction(function () use($sale_value, $vendor_id) {
             $sale = Sale::create([

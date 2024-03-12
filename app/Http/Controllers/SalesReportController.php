@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sale;
-use App\Models\Vendor;
 use App\Services\SalesReportService;
 
 class SalesReportController extends Controller

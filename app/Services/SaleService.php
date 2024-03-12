@@ -21,7 +21,7 @@ class SaleService
         return $this->saleRepository->add($sale_value, $vendor_id);
     }
 
-    public static function calculateTotalSales (Collection $sales): float
+    public static function calculateTotalSales(Collection $sales): float
     {
         $totalSalesValue = 0;
 
@@ -32,7 +32,7 @@ class SaleService
         return $totalSalesValue;
     }
 
-    public function showAllSales ()
+    public function showAllSales()
     {
         return $this->saleRepository->getAllSales();
     }

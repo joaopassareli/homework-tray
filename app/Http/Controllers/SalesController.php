@@ -2,11 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sale;
-use App\Models\Vendor;
-use Illuminate\Http\Request;
 use App\Services\SaleService;
-use Illuminate\Support\Facades\DB;
 use App\Repository\VendorRepository;
 use App\Http\Requests\SalesFormRequest;
 
@@ -39,7 +35,10 @@ class SalesController extends Controller
     public function store (SalesFormRequest $request)
     {
         return to_route('sales.index')
-            ->with('mensagem.sucesso', $this->saleService->createSale($request->sale_value, $request->vendor_id));
+            ->with(
+                'mensagem.sucesso',
+                $this->saleService->createSale($request->sale_value, $request->vendor_id)
+            );
     }
 
     public function all ()

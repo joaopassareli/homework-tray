@@ -14,7 +14,7 @@ class VendorRepository
         return Vendor::all();
     }
 
-    public function add (string $name, string $email): Vendor
+    public function add(string $name, string $email): Vendor
     {
         return DB::transaction(function () use($name, $email) {
             return Vendor::create([
