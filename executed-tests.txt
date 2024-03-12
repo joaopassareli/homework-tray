@@ -1,8 +1,5 @@
-Sale Controller (Tests\Feature\SaleController)
- [x] Confirm that sale is created
-
 Vendor Controller (Tests\Feature\VendorController)
- [x] Confirm that vendor is created
- [x] Confirm that vendor is edited
- [x] Confirm that vendor was deleted
+ [ ] Confirm that vendor is created
+ [ ] Confirm that vendor is edited
+ [ ] Confirm that vendor was deleted
 

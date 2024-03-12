@@ -5,8 +5,8 @@ namespace App\Repository;
 use App\Models\Sale;
 use App\Models\Vendor;
 use App\Services\SaleService;
+use DomainException;
 use Illuminate\Support\Facades\DB;
-use App\Services\CalculateTotalSales;
 
 class SaleRepository
 {
@@ -17,13 +17,11 @@ class SaleRepository
 
         $totalSalesValue = SaleService::calculateTotalSales($sales);
 
-        $data = array(
+        return array(
             'sales' => $sales,
             'vendors' => $vendors,
             'totalSalesValue' => $totalSalesValue
         );
-
-        return $data;
     }
 
     public function add (float $sale_value, int $vendor_id)
@@ -37,9 +35,7 @@ class SaleRepository
             $vendor = Vendor::find($sale->vendor_id);
             $sale->sale_value = number_format($sale->sale_value, 2, ',', '.');
 
-            $mensagemSucesso = "Registrada a venda no valor de R$ {$sale->sale_value} efetuada pelo vendedor {$vendor->name}";
-
-            return $mensagemSucesso;
+            return "Registrada a venda no valor de R$ {$sale->sale_value} efetuada pelo vendedor {$vendor->name}";
         });
     }
 
@@ -50,12 +46,10 @@ class SaleRepository
 
         $totalSalesValue = SaleService::calculateTotalSales($sales);
 
-        $data = array(
+       return array(
             'sales' => $sales,
             'vendors' => $vendors,
             'totalSalesValue' => $totalSalesValue
         );
-
-        return $data;
     }
 }

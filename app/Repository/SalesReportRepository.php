@@ -16,13 +16,11 @@ class SalesReportRepository
         $totalComission = SaleService::calculateComission($sales);
         $totalSalesValue = SaleService::calculateTotalSales($sales);
 
-        $data = array(
+        return array(
             'vendor' => $vendor,
             'sales' => $sales,
             'totalComission' => $totalComission,
             'totalSalesValue' => $totalSalesValue
         );
-
-        return $data;
     }
 }

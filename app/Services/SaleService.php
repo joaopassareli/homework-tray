@@ -2,10 +2,8 @@
 
 namespace App\Services;
 
-use App\Models\Vendor;
 use App\Repository\SaleRepository;
 use Illuminate\Support\Collection;
-use App\Http\Requests\SalesFormRequest;
 
 class SaleService
 {

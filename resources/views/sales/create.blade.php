@@ -7,7 +7,7 @@
             <div class="col-5">
                 <label for="vendor_id" class="form-label">Nome do Vendedor:</label>
                 <select class="form-select" name="vendor_id" id="vendor_id">
-                    <option selected>Selecione um vendedor</option>
+                    <option value='' selected>Selecione um vendedor</option>
                     @foreach ($vendors as $vendor)
                         <option value="{{ $vendor->id }}">{{ $vendor->name }}</option>
                     @endforeach

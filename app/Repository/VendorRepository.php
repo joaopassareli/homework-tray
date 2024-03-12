@@ -17,12 +17,10 @@ class VendorRepository
     public function add (string $name, string $email): Vendor
     {
         return DB::transaction(function () use($name, $email) {
-            $vendor = Vendor::create([
+            return Vendor::create([
                 'name' => $name,
                 'email' => $email,
             ]);
-
-            return $vendor;
         });
     }
 
@@ -34,13 +32,13 @@ class VendorRepository
         $vendor->fill($request->all());
         $vendor->save();
 
-        return $mensagemSucesso = "O vendedor '{$oldName}' teve seu nome alterado para '{$vendor->name}' e seu e-mail de '{$oldEmail}' para '{$vendor->email}'";
+        return "O vendedor '{$oldName}' teve seu nome alterado para '{$vendor->name}' e seu e-mail de '{$oldEmail}' para '{$vendor->email}'";
     }
 
     public function destroy(Vendor $vendor)
     {
         $vendor->delete();
 
-        return $mensagemSucesso = "Vendedor {$vendor->name} excluído com sucesso!";
+        return "Vendedor {$vendor->name} excluído com sucesso!";
     }
 }
