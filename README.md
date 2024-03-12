@@ -36,3 +36,7 @@ Para desenvolvimento do código foi utilizado o editor [VSCode](https://code.vis
 
 O servidor iniciará em: localhost:8080 
 
+# Rodando os testes unitários
+
+Para rodar os testes unitários basta digitar o comando: `.\vendor\bin\phpunit`
+Para ajudar na visualização, configurei os testes para que fosse criado um log na raiz do projeto, o arquivo chama "executed-tests.txt". Nele é informado de forma mais visual os testes realizados e se foram concluídos ou não.
